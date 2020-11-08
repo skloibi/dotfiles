@@ -1,0 +1,12 @@
+call plug#begin('~/.vim/plugged')
+
+"Fugitive Vim Github Wrapper
+Plug 'tpope/vim-fugitive'
+
+"Vim status line
+Plug 'itchyny/lightline.vim'
+
+"Asciidoctor plugin
+Plug 'habamax/vim-asciidoctor'
+
+call plug#end()

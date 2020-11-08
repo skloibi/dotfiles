@@ -1,0 +1,44 @@
+[global_config]
+  window_state = maximise
+  tab_position = bottom
+  scroll_tabbar = True
+  title_use_system_font = False
+  title_font = Iosevka Light 11
+[keybindings]
+  move_tab_right = <Primary><Alt>Right
+  move_tab_left = <Primary><Alt>Left
+  next_tab = <Alt>Right
+  prev_tab = <Alt>Left
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
+  switch_to_tab_6 = <Alt>6
+  switch_to_tab_7 = <Alt>7
+  switch_to_tab_8 = <Alt>8
+  switch_to_tab_9 = <Alt>9
+  switch_to_tab_10 = <Alt>0
+[profiles]
+  [[default]]
+    audible_bell = False
+    visible_bell = True
+    icon_bell = False
+    background_color = "#002b36"
+    cursor_color = "#aaaaaa"
+    font = Iosevka Light 11
+    foreground_color = "#839496"
+    show_titlebar = False
+    scrollback_infinite = True
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]

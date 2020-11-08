@@ -1,0 +1,10 @@
+# Custom input configuration
+
+# input "1739:52602:DLL08B0:01_06CB:CD7A_Touchpad" {
+#  tap enabled
+#  tap_button_map lrm
+#  natural_scroll enabled
+#  pointer_accel 0.3
+#  accel_profile adaptive
+#  dwt enabled
+#}
