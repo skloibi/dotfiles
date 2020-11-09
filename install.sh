@@ -60,6 +60,8 @@ echo ":: Setting up Terminator"
 stow terminator
 
 echo ":: Setting up Zsh"
+# .zshrc may have been created on installation
+rm ~/.zshrc
 stow zsh
 stow zsh-plugins
 stow zsh-themes
