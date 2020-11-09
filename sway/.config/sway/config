@@ -217,6 +217,6 @@ default_border none
 #
 # Layout configuration
 #
-workspace_layout stackd
+workspace_layout stacking
 
 include /etc/sway/config.d/*
