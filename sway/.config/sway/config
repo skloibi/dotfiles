@@ -27,12 +27,12 @@ include ./outputs
 font pango: Iosevka Nerd Font 10
 
 ### Idle configuration
-# This will lock your screen after 60 seconds of inactivity, then turn off
+# This will lock your screen after 180 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-  timeout 60 swaylock \
-  timeout 360 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+  timeout 180 swaylock \
+  timeout 480 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
   before-sleep swaylock
 
 ### Input configuration
@@ -213,5 +213,10 @@ exec nm-applet --indicator &
 # Window configuration
 #
 default_border none
+
+#
+# Layout configuration
+#
+workspace_layout stackd
 
 include /etc/sway/config.d/*
