@@ -23,6 +23,11 @@ while [ ! -z "$1" ];do
       NO_USER_INPUT=1
       echo "> Requiring no user input"
       ;;
+    -x|--x11)
+      shift
+      INSTALL_X11_BINDINGS=1
+      echo "> Installing x11 bindings"
+      ;;
     *)
       echo "Unsupported argument: '$1'"
       show_usage
@@ -88,6 +93,12 @@ stow mako
 
 # create background directory
 mkdir -p $HOME/.background
+
+if [ -n "$USE_X11_BINDINGS" ]; then
+  echo ":: Setting up I3 configuration"
+  stow i3
+  stow polybar
+fi
 
 echo "> Completed dotfile installation"
 
