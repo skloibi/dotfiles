@@ -20,10 +20,8 @@ floating_modifier $mod
 # Notification daemon
 exec --no-startup-id dunst
 
-# Specify monitor dimensions
-exec_always --no-startup-id ~/.xrandr
-# Set background
-exec_always ~/.fehbg
+# Specify monitor dimensions and (afterwards) set the background
+exec_always --no-startup-id ~/.xrandr; ~/.fehbg
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
