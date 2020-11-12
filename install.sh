@@ -94,7 +94,7 @@ stow mako
 # create background directory
 mkdir -p $HOME/.background
 
-if [ -n "$USE_X11_BINDINGS" ]; then
+if [ -n "$INSTALL_X11_BINDINGS" ]; then
   echo ":: Setting up I3 configuration"
   stow i3
   stow polybar
