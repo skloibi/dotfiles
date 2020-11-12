@@ -28,6 +28,9 @@ exec_always ~/.fehbg
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
+# NetworkManager
+exec --no-startup-id nm-applet --indicator
+
 # Keybase
 exec --no-startup-id run_keybase -a
 
