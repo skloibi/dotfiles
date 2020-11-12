@@ -50,9 +50,9 @@ font-0 = "Iosevka Nerd Font:size=10:pixelsize=10;1"
 font-1 = unifont:fontformat=truetype:size=20:pixelsize=20:antialias=false;1
 font-2 = Siji:size=18:pixelsize=18;1
 
-modules-left = i3
-modules-center = mpd spotify
-modules-right = cpu memory filesystem backlight-acpi pulseaudio xkeyboard wifi eth battery date powermenu
+modules-left = i3 spotify
+modules-center = xwindow
+modules-right = cpu memory filesystem wifi eth backlight pulseaudio battery date
 
 tray-position = right
 tray-padding = 2
@@ -65,28 +65,13 @@ cursor-scroll = ns-resize
 type = internal/xwindow
 label = %title:0:30:...%
 
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
 [module/spotify]
 type = custom/script
 interval = 1
 format-prefix = " "
 format = <label>
-exec = python $HOME/.config/polybar/polybar-spotify/spotify_status.py -f '{artist}: {song}'
+exec = $HOME/.config/polybar/spotify.sh
+exec-if = pgrep -x spotify
 format-underline = #1db954
 
 [module/filesystem]
@@ -131,19 +116,6 @@ label-urgent = %index%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
 [module/xbacklight]
 type = internal/xbacklight
 
@@ -157,22 +129,12 @@ ramp-2 = 🌓
 ramp-3 = 🌒
 ramp-4 = 🌑
 
-; Only applies if <bar> is used
-bar-width = 10
-bar-indicator = |
-bar-fill = ─
-bar-empty = ─
-
 enable-scroll = true
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
 card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
-interval = 1 
+interval = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
@@ -217,7 +179,7 @@ format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 format-packetloss = <animation-packetloss> <label-connected>
 
-label-connected = %essid% [%local_ip%] %upspeed:12% %downspeed:12%
+label-connected = %essid% [%local_ip%] %upspeed:8% %downspeed:8%
 label-connected-foreground = #eefafafa
 
 label-disconnected = disconnected
@@ -232,7 +194,7 @@ animation-packetloss-framerate = 500
 
 [module/wifi]
 inherit = module/network
-interface = wlp1s0
+interface = wlp0s20f3
 
 format-connected-underline = #9f78e1
 
@@ -255,8 +217,6 @@ date-alt = " %A, %d %B %Y"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
 label = %date% %time%
@@ -280,84 +240,36 @@ click-right = pavucontrol &i
 
 [module/battery]
 type = internal/battery
-battery = BAT1
+battery = BAT0
 adapter = ADP1
-full-at = 98
+full-at = 100
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-10 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
-
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true
