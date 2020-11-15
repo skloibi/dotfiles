@@ -90,6 +90,8 @@ stow swaylock
 stow wofi
 stow waybar
 stow mako
+# ensure that screenshot directory exists
+mkdir -p $HOME/screenshots
 
 # create background directory
 mkdir -p $HOME/.background

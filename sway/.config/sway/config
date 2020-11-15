@@ -75,6 +75,13 @@ bindsym $mod+Ctrl+l exec swaylock
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
+# Screenshot config
+# Take a screenshot with all output and save it into screenshots
+bindsym Print exec grim ~/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
+
+# Take a Screenshot with the region select
+bindsym $mod+Print exec grim -g "$(slurp)" ~/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
+
 include ./keybindings
 #
 # Moving around:
