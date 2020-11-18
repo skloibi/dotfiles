@@ -1,0 +1,2 @@
+# Ignore actual configuration file as cached data is written to it
+./Trolltech.conf

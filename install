@@ -66,7 +66,7 @@ stow terminator
 
 echo ":: Setting up Zsh"
 # .zshrc may have been created on installation
-rm ~/.zshrc
+rm -f $HOME/.zshrc
 stow zsh
 stow zsh-plugins
 stow zsh-themes
@@ -77,8 +77,10 @@ stow vim
 echo ":: Setting up theme configuration"
 stow gtk
 # remove old Trolltech configuration
-rm -f ~/.config/Trolltech.conf
-stow --override=.config/Trolltech.conf qt
+rm -f $HOME/.config/Trolltech.conf
+# copy template file 
+cp -n qt/.config/Trolltech.conf.dotfile.template $HOME/.config/Trolltech.conf
+stow qt
 
 echo ":: Setting up Sway configuration"
 stow sway
