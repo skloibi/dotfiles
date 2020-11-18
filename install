@@ -18,10 +18,10 @@ while [ ! -z "$1" ];do
       show_usage
       exit 0
       ;;
-    -b|--background)
+    -i|--init)
       shift
-      NO_USER_INPUT=1
-      echo "> Requiring no user input"
+      INITIALIZE=1
+      echo "> Initializing configuration"
       ;;
     -x|--x11)
       shift
@@ -53,7 +53,7 @@ function register_git_author() {
   email = ${email}
 EOT
 }
-if [ -z "$NO_USER_INPUT" ]; then
+if [ -n "$INITIALIZE" ]; then
   register_git_author
 fi
 stow git
