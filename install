@@ -36,8 +36,6 @@ done
 
 echo "> Starting installation of dotfiles"
 
-echo ":: Setting up environment variables"
-stow environment.d
 
 echo ":: Setting up default Git configuration"
 function register_git_author() {
@@ -82,16 +80,6 @@ rm -f $HOME/.config/Trolltech.conf
 cp -n qt/.config/Trolltech.conf.dotfile.template $HOME/.config/Trolltech.conf
 stow qt
 
-echo ":: Setting up Sway configuration"
-stow sway
-# copy configuration file templates
-cp -n sway/.config/sway/inputs.dotfile.template $HOME/.config/sway/inputs
-cp -n sway/.config/sway/outputs.dotfile.template $HOME/.config/sway/outputs
-cp -n sway/.config/sway/keybindings.dotfile.template $HOME/.config/sway/keybindings
-stow swaylock
-stow wofi
-stow waybar
-stow mako
 # ensure that screenshot directory exists
 mkdir -p $HOME/screenshots
 
@@ -102,6 +90,19 @@ if [ -n "$INSTALL_X11_BINDINGS" ]; then
   echo ":: Setting up I3 configuration"
   stow i3
   stow polybar
+else
+  echo ":: Setting up Wayland environment variables"
+  stow environment.d
+  echo ":: Setting up Sway configuration"
+  stow sway
+  # copy configuration file templates
+  cp -n sway/.config/sway/inputs.dotfile.template $HOME/.config/sway/inputs
+  cp -n sway/.config/sway/outputs.dotfile.template $HOME/.config/sway/outputs
+  cp -n sway/.config/sway/keybindings.dotfile.template $HOME/.config/sway/keybindings
+  stow swaylock
+  stow wofi
+  stow waybar
+  stow mako
 fi
 
 echo "> Completed dotfile installation"
