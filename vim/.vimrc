@@ -85,3 +85,17 @@ if filereadable(expand("~/.vimrc.plug"))
   source ~/.vimrc.plug
 endif
 
+"Plugin configuration
+
+"Color scheme for lightline
+let g:lightline = { 'colorscheme': 'solarized' }
+
+"Let NERDTree show hidden files
+let NERDTreeShowHidden=1
+" NERDTree key bindings
+map <C-N> :NERDTreeToggle<CR>
+
+" Open NERDTree when opening directories
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
+

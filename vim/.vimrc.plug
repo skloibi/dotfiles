@@ -9,4 +9,26 @@ Plug 'itchyny/lightline.vim'
 "Asciidoctor plugin
 Plug 'habamax/vim-asciidoctor'
 
+"Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+Plug 'tpope/vim-surround'
+
+"Multi-cursor support
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
+"NERDTree + Git file highlighter
+Plug 'preservim/nerdtree' |
+      \ Plug 'Xuyuanp/nerdtree-git-plugin'
+
+"EditorConfig-aware
+Plug 'editorconfig/editorconfig-vim'
+
+"Git highlighter
+Plug 'airblade/vim-gitgutter'
+
+"Rainbow parentheses
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+
 call plug#end()
