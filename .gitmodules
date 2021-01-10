@@ -10,15 +10,3 @@
 [submodule "polybar/.config/polybar/polybar-spotify"]
 	path = polybar/.config/polybar/polybar-spotify
 	url = https://github.com/Jvanrhijn/polybar-spotify
-[submodule "vim/.vim/plugged/lightline.vim"]
-  path = vim/.vim/plugged/lightline.vim
-	url = git@github.com:itchyny/lightline.vim.git
-[submodule "vim/.vim/plugged/vim-asciidoctor"]
-	path = vim/.vim/plugged/vim-asciidoctor
-	url = git@github.com:habamax/vim-asciidoctor.git
-[submodule "vim/.vim/plugged/vim-fugitive"]
-	path = vim/.vim/plugged/vim-fugitive
-	url = git@github.com:tpope/vim-fugitive.git
-[submodule "zsh-plugins/.oh-my-zsh/custom/plugins/mx"]
-	path = zsh-plugins/.oh-my-zsh/custom/plugins/mx
-	url = https://github.com/mukel/mx-honey.git
