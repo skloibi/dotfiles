@@ -65,9 +65,9 @@
       "format-alt": "{ipaddr}/{cidr} {icon}",
       "format-alt-click": "click-left",
       "format-icons": {
-        "wifi": [""],
-        "ethernet": [""],
-        "disconnected": [""]
+        "wifi": ["[wifi]"],
+        "ethernet": ["[eth]"],
+        "disconnected": ["[disconnected]"]
       }
     },
     "pulseaudio": {
