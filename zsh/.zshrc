@@ -81,6 +81,9 @@ export LANG=en_GB.UTF-8
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
+# Custom script settings
+test -f $HOME/.zshrc.more && source $HOME/.zshrc.more
+
 # Custom environment variables
 test -f $HOME/.env && source $HOME/.env
 
