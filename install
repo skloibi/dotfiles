@@ -6,7 +6,8 @@ function show_usage() {
   printf "Usage $0 [options [parameters]]\n"
   printf "\n"
   printf "Options: \n"
-  printf " -b|--background, Require no user input - keep custom information as-is\n"
+  printf " -i|--init, Initalize configuration - custom settings are lost\n"
+  printf " -x|--x11, Install x11 bindings - otherwise Wayland bindings are assumed\n"
   printf " -h|--help, Print help\n"
 
   return 0
