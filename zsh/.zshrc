@@ -81,6 +81,12 @@ export LANG=en_GB.UTF-8
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
+# User specific environment (reused from bashrc)
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+
 # Custom script settings
 test -f $HOME/.zshrc.more && source $HOME/.zshrc.more
 
