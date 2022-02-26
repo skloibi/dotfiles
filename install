@@ -90,6 +90,7 @@ mkdir -p $HOME/.background
 if [ -n "$INSTALL_X11_BINDINGS" ]; then
   echo ":: Setting up I3 configuration"
   stow i3
+  sudo stow -t /etc/X11/xorg.conf.d/ libinput
   stow polybar
 else
   echo ":: Setting up Wayland environment variables"
