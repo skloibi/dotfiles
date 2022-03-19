@@ -14,7 +14,7 @@ set $term terminator
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi | xargs swaymsg exec
+set $menu bemenu-run -i -l 10 -p "run" -w -H 20 --no-exec | xargs swaymsg exec
 
 ### Output configuration
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
