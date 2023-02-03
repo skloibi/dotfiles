@@ -39,8 +39,10 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 
 # start rofi (program launcher) in "run" mode
-bindsym $mod+d exec --no-startup-id "rofi -combi-modes drun,run,window,ssh -modes combi -show combi"
-# TODO: bind other rofi modes (e.g., ssh, files, ...)
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launch.sh
+
+# start rofi network manager
+bindsym $mod+n exec --no-startup-id networkmanager_dmenu
 
 # change focus
 bindsym $mod+j focus left
