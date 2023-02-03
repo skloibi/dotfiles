@@ -90,8 +90,9 @@ mkdir -p $HOME/.background
 if [ -n "$INSTALL_X11_BINDINGS" ]; then
   echo ":: Setting up I3 configuration"
   stow i3
-  sudo stow -t /etc/X11/xorg.conf.d/ libinput
+  stow rofi
   stow polybar
+  sudo stow -t /etc/X11/xorg.conf.d/ libinput
 else
   echo ":: Setting up Wayland environment variables"
   stow environment.d
@@ -106,6 +107,9 @@ else
   stow waybar
   stow mako
 fi
+
+echo ":: Setting up network manager"
+stow NetworkManager
 
 echo "> Completed dotfile installation"
 
