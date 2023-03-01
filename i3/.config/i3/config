@@ -18,13 +18,16 @@ hide_edge_borders both
 floating_modifier $mod
 
 # Notification daemon
-exec --no-startup-id dunst
+exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
 
 # Specify monitor dimensions and (afterwards) set the background
 exec_always --no-startup-id ~/.xrandr; ~/.fehbg
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# NetworkManager
+exec --no-startup-id nm-applet --indicator
 
 # Keybase
 exec --no-startup-id run_keybase -a
@@ -185,9 +188,9 @@ bindsym $mod+Control+l exec i3lock -c 000000
 
 # Colors
 # class                 border  bground text    indicator child_border
-client.focused          #503000 #503000 #FFFFFF #2E9EF4   #285577
-client.focused_inactive #333333 #333333 #FFFFFF #484E50   #5F676A
-client.unfocused        #333333 #333333 #999999 #333333   #222222
+client.focused          #503000 #503000 #FFFFFF #2E9EF4   #503000
+client.focused_inactive #333333 #333333 #FFFFFF #484E50   #333333
+client.unfocused        #333333 #333333 #999999 #333333   #333333
 client.urgent           #720000 #720000 #FFFFFF #720000   #720000
 client.placeholder      #000000 #000000 #FFFFFF #000000   #0C0C0C
 

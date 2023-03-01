@@ -92,6 +92,7 @@ if [ -n "$INSTALL_X11_BINDINGS" ]; then
   stow i3
   stow rofi
   stow polybar
+  stow dunst
   sudo stow -t /etc/X11/xorg.conf.d/ libinput
 else
   echo ":: Setting up Wayland environment variables"
