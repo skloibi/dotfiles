@@ -118,5 +118,8 @@ test -f $HOME/.env && source $HOME/.env
 # Custom aliases
 test -f $HOME/.aliases && source $HOME/.aliases
 
+# Keychain SSH/GPG agent startup
+eval $(keychain --eval --agents ssh --quick --quiet --noask)
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
