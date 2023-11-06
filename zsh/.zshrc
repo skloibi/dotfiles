@@ -69,7 +69,6 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -108,7 +107,6 @@ dot(){
     dotfiles $*
   fi
 }
-
 # Custom script settings
 test -f $HOME/.zshrc.more && source $HOME/.zshrc.more
 
