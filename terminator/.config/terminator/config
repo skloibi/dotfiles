@@ -2,8 +2,6 @@
   window_state = maximise
   tab_position = bottom
   scroll_tabbar = True
-  title_use_system_font = False
-  title_font = Iosevka Light 11
 [keybindings]
   move_tab_right = <Primary><Alt>Right
   move_tab_left = <Primary><Alt>Left
@@ -24,7 +22,6 @@
     visible_bell = True
     icon_bell = False
     background_color = "#002b36"
-    cursor_color = "#aaaaaa"
     font = Iosevka Light 13
     foreground_color = "#839496"
     show_titlebar = False
@@ -35,7 +32,6 @@
     visible_bell = True
     icon_bell = False
     background_color = "#fdf6e3"
-    cursor_color = "#aaaaaa"
     font = Iosevka Light 13
     foreground_color = "#657b83"
     show_titlebar = False
