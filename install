@@ -73,6 +73,9 @@ stow zsh-themes
 echo ":: Setting up Vim"
 stow vim
 
+echo ":: Setting up GDB config"
+stow gdb
+
 echo ":: Setting up theme configuration"
 stow gtk
 # remove old Trolltech configuration
